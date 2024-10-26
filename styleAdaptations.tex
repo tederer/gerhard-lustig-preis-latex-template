@@ -3,18 +3,6 @@
 % https://www.overleaf.com/learn/latex/Font_typefaces
 % https://texfaq.org/FAQ-patch
 
-% \textrm{} with serif 
-% \textsf{} without serif
-% \texttt{} monospaced
-
-% Arial             phv
-% Times             ptm
-% Trebuchet         ???
-% Times New Roman   ???
-
-%\fontfamily{phv}\fontseries{b}\selectfont
-%\usefont {T1} {pcr} {m} {n}
-
 \usepackage[T1]{fontenc}
 \usepackage{titlesec}
 
@@ -46,5 +34,3 @@
 
 \let\originalKeywords\keywords
 \renewcommand{\keywords}[1]{{{\makeatletter\fontencoding{T1}\fontfamily{\times}\fontsize{11}{13.2}\selectfont \originalKeywords{#1}}}}
-
-% \meaning for debugging
