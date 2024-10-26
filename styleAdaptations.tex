@@ -1,0 +1,50 @@
+% https://www.latex-project.org/help/documentation/fntguide.pdf
+% https://mirror.kumi.systems/ctan/macros/latex/contrib/titlesec/titlesec.pdf
+% https://www.overleaf.com/learn/latex/Font_typefaces
+% https://texfaq.org/FAQ-patch
+
+% \textrm{} with serif 
+% \textsf{} without serif
+% \texttt{} monospaced
+
+% Arial             phv
+% Times             ptm
+% Trebuchet         ???
+% Times New Roman   ???
+
+%\fontfamily{phv}\fontseries{b}\selectfont
+%\usefont {T1} {pcr} {m} {n}
+
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+
+\def \arial         {phv}
+\def \times         {ptm}
+\def \trebuchet     {\arial}
+\def \timesNewRoman {\times}
+
+\let\originalTitle\title
+\renewcommand{\title}[1]{\originalTitle{{\makeatletter\fontencoding{T1}\fontfamily{\trebuchet}\fontsize{16}{19.2}\selectfont #1}}}
+
+\let\originalAuthor\author
+\renewcommand{\author}[1]{\originalAuthor{{\makeatletter\fontencoding{T1}\fontfamily{\timesNewRoman}\fontsize{11}{13.2}\selectfont #1}}}
+
+\let\originalAffil\affil
+\renewcommand{\affil}[1]{\originalAffil{{\vspace{-10pt}\makeatletter\fontencoding{T1}\fontfamily{\timesNewRoman}\fontsize{11}{13.2}\selectfont #1}}}
+
+\titleformat{\section}
+{\makeatletter\fontencoding{T1}\fontfamily{\trebuchet}\fontsize{14}{16.8}\selectfont}
+{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\makeatletter\fontencoding{T1}\fontfamily{\times}\fontsize{12}{14.4}\selectfont}
+{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\makeatletter\fontencoding{T1}\fontfamily{\times}\fontshape{it}\fontsize{11}{13.2}\selectfont}
+{\thesubsubsection}{1em}{}
+
+\let\originalKeywords\keywords
+\renewcommand{\keywords}[1]{{{\makeatletter\fontencoding{T1}\fontfamily{\times}\fontsize{11}{13.2}\selectfont \originalKeywords{#1}}}}
+
+% \meaning for debugging

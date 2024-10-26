@@ -1,0 +1,38 @@
+\documentclass[a4paper, 11pt]{article}
+%\usepackage[german]{babel}   use me if your document is in german
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{authblk}
+\usepackage[hidelinks]{hyperref}
+\usepackage{orcidlink}
+\usepackage[nolist]{acronym}
+\usepackage[natbib=true, backend=biber, style=apa, sorting=nty]{biblatex}
+
+\addbibresource{references.bib}
+
+\newcommand{\keywords}[1]
+{
+  \vspace{1em}
+  \noindent
+  \textbf{Keywords:} #1
+}
+
+\input{styleAdaptations}
+
+\title{Paper Template for Gerhard-Lustig-Preis}
+\author{Firstname Lastname \orcidlink{????-????-????-????} \href{mailto:firstname@lastname.com}{\includegraphics[height=7pt]{images/envelope.png}}}
+\affil{Department of Mathematics, University X}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\input{chapters/abstract}
+\input{chapters/introduction}
+
+\printbibliography
+
+\input{acronyms}
+
+\end{document}
